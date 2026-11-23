@@ -3,13 +3,44 @@
   "$id": "https://github.com/MergeFoxSandbox/shared-schema/schema/invoice.schema.json",
   "title": "Invoice",
   "type": "object",
-  "required": ["id", "customerId", "amountCents", "currency", "status"],
+  "required": [
+    "id",
+    "customerId",
+    "amountCents",
+    "currency",
+    "status"
+  ],
   "properties": {
-    "id": { "type": "string" },
-    "customerId": { "type": "string" },
-    "amountCents": { "type": "integer", "minimum": 0 },
-    "currency": { "type": "string", "enum": ["USD", "EUR", "INR"] },
-    "status": { "type": "string", "enum": ["draft", "sent", "paid"] }
+    "id": {
+      "type": "string"
+    },
+    "customerId": {
+      "type": "string"
+    },
+    "amountCents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "USD",
+        "EUR",
+        "INR"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "sent",
+        "paid"
+      ]
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date"
+    }
   },
   "additionalProperties": false
 }
