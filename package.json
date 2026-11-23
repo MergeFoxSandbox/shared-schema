@@ -1,0 +1,9 @@
+{
+  "name": "@mergefoxsandbox/shared-schema",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared Invoice and Customer types for the MergeFox sandbox",
+  "scripts": { "test": "node --test" },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MergeFoxSandbox/shared-schema/schema/invoice.schema.json",
+  "title": "Invoice",
+  "type": "object",
+  "required": ["id", "customerId", "amountCents", "currency", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "customerId": { "type": "string" },
+    "amountCents": { "type": "integer", "minimum": 0 },
+    "currency": { "type": "string", "enum": ["USD", "EUR", "INR"] },
+    "status": { "type": "string", "enum": ["draft", "sent", "paid"] }
+  },
+  "additionalProperties": false
+}
