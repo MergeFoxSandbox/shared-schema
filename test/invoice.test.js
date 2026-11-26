@@ -16,3 +16,8 @@ test('missing and unknown fields are reported', () => {
 test('negative amounts are rejected', () => {
   assert.deepEqual(validateInvoice({ ...valid, amountCents: -1 }), ['amountCents must be a non-negative integer']);
 });
+
+test('dueDate is optional and must be YYYY-MM-DD', () => {
+  assert.deepEqual(validateInvoice({ ...valid, dueDate: '2026-12-31' }), []);
+  assert.deepEqual(validateInvoice({ ...valid, dueDate: '31/12/2026' }), ['dueDate must be YYYY-MM-DD']);
+});
